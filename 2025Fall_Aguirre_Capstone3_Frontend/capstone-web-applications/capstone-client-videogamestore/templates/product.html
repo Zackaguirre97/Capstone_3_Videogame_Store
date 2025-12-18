@@ -1,0 +1,21 @@
+{{#products}}
+<div class="product">
+    <div>
+        <h4>{{name}}</h4>
+        <div class="photo">
+            <img src="./images/products/{{imageUrl}}" alt=""
+                 onclick="showImageDetailForm(`{{name}}`,'./images/products/{{imageUrl}}')"
+            >
+          <!--  By using displayPrice instead of price the app can use the "Free" filter in template-builder.js  -->
+          <h4 class="price">{{displayPrice}}</h4>
+        </div>
+        <div>
+            <p>{{description}}</p>
+        </div>
+
+    </div>
+    <div class="add-button">
+        <button class="btn btn-success" onclick="cartService.addToCart({{productId}})">Add to Cart</button>
+    </div>
+</div>
+{{/products}}
